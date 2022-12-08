@@ -1,12 +1,11 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: import.meta.env.VITE_APP_API_URL.PROD,
+  baseURL: "https://api.openweathermap.org/data/2.5/",
 });
 
 api.interceptors.request.use((config) => {
   config.url =
-    config.url +
-    `&appid=${import.meta.env.VITE_APP_API_KEY.PROD}&lang=ru&units=metric`;
+    config.url + `&appid=bc4db972c639040e56fa0e1981a1c33f&lang=ru&units=metric`;
   return config;
 });
